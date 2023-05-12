@@ -9,20 +9,25 @@ jobs:
     - name: Missing input file
       run: |
         chmod +x tests/IF_missing.sh
-        ./tests/IF_missing.sh
+        cd tests
+        ./IF_missing.sh
     - name: Input file doesn't exist
       run: |
         chmod +x tests/IF_doesnt_exist.sh
-        ./tests/IF_doesnt_exist.sh
+        cd tests
+        ./IF_doesnt_exist.sh
     - name: Missing output file
       run: |
         chmod +x tests/OF_missing.sh
-        ./tests/OF_missing.sh
+        cd tests
+        ./OF_missing.sh
     - name: Writing to output file
       run: |
         chmod +x tests/OF_writing.sh
-        ./tests/OF_writing.sh
+        cd tests
+        ./OF_writing.sh
     - name: Overwriting to output file
       run: |
         chmod +x tests/OF_overwriting.sh
-        ./tests/OF_overwriting.sh
+        cd tests
+        ./OF_overwriting.sh
