@@ -1,12 +1,12 @@
 #!/bin/bash
-test_file=test_arguments.sh
+test_file=$1
 chmod +x $test_file
 cd ..
 chmod +x ebash.sh
 
 output=`./ebash.sh tests/$test_file`
 
-if [[ $output == "Phrase idk is repeating 12 times" ]]
+if [[ $output == $2 ]]
 then
     echo "The code executed correctly. Test passed"
     exit 0
