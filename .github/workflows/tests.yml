@@ -8,26 +8,51 @@ jobs:
     - uses: actions/checkout@v3
     - name: Missing input file
       run: |
-        chmod +x tests/IF_missing.sh
         cd tests
+        chmod +x IF_missing.sh
         ./IF_missing.sh
     - name: Input file doesn't exist
       run: |
-        chmod +x tests/IF_doesnt_exist.sh
         cd tests
+        chmod +x IF_doesnt_exist.sh
         ./IF_doesnt_exist.sh
     - name: Missing output file
       run: |
-        chmod +x tests/OF_missing.sh
         cd tests
+        chmod +x OF_missing.sh
         ./OF_missing.sh
     - name: Writing to output file
       run: |
-        chmod +x tests/OF_writing.sh
         cd tests
+        chmod +x OF_writing.sh
         ./OF_writing.sh
     - name: Overwriting to output file
       run: |
-        chmod +x tests/OF_overwriting.sh
         cd tests
+        chmod +x OF_overwriting.sh
         ./OF_overwriting.sh
+  functionality:
+    name: Testing the functionality of the program
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Increment operator test
+      run: |
+        cd tests
+        chmod +x tests/FT_increment.sh
+        ./FT_increment.sh
+    - name: Arithmetic expressions
+      run: |
+        cd tests
+        chmod +x tests/FT_arithmetic.sh
+        ./FT_arithmetic.sh
+    - name: Arithmetic conditional expressions
+      run: |
+        cd tests
+        chmod +x tests/FT_conditional.sh
+        ./FT_conditional.sh
+    - name: Named Function Arguments
+      run: |
+        cd tests
+        chmod +x tests/FT_arguments.sh
+        ./FT_arguments.sh
