@@ -39,20 +39,20 @@ jobs:
     - name: Increment operator test
       run: |
         cd tests
-        chmod +x tests/FT_increment.sh
+        chmod +x FT_increment.sh
         ./FT_increment.sh
     - name: Arithmetic expressions
       run: |
         cd tests
-        chmod +x tests/FT_arithmetic.sh
+        chmod +x FT_arithmetic.sh
         ./FT_arithmetic.sh
     - name: Arithmetic conditional expressions
       run: |
         cd tests
-        chmod +x tests/FT_conditional.sh
+        chmod +x FT_conditional.sh
         ./FT_conditional.sh
     - name: Named Function Arguments
       run: |
         cd tests
-        chmod +x tests/FT_arguments.sh
+        chmod +x FT_arguments.sh
         ./FT_arguments.sh
