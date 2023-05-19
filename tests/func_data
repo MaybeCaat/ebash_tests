@@ -1,0 +1,4 @@
+inc functionality_tests/increment.sh 8
+arith functionality_tests/arithmetic.sh 1.8 .75 1.25 .28000000000000000000 64 3.14159265358979323844 0
+conds functionality_tests/conditional.sh true true false 
+args functionality_tests/arguments.sh Phrase idk is repeating 12 times

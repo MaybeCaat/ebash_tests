@@ -1,16 +1,24 @@
 #!/bin/bash
-test_file=$1
-chmod +x $test_file
 cd ..
 chmod +x ebash.sh
 
-output=`./ebash.sh tests/$test_file`
+while read test script answer
+do
+    if [[ $test != $1 ]]
+    then
+        echo "continue"
+        continue
+    fi
+    chmod +x tests/$script
+    output=`./ebash.sh tests/$script`
+    echo "$output $answer"
 
-if [[ $output == $2 ]]
-then
-    echo "The code executed correctly. Test passed"
-    exit 0
-else
-    echo "The code executed incorrectly. Test failed"
-    exit 1
-fi
+    if [[ $output == $answer ]]
+    then
+        echo "The code executed correctly. Test passed"
+        exit 0
+    else
+        echo "The code executed incorrectly. Test failed"
+        exit 1
+    fi
+done < tests/func_data
