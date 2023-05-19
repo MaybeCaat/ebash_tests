@@ -38,7 +38,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Add execution permissions to functionality script
-      run: chmod +x tests/functionality.sh
+      run: chmod +x functionality.sh
     - name: Increment operator test
       run: ./functionality.sh inc
     - name: Arithmetic expressions
