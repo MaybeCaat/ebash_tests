@@ -4,53 +4,46 @@ jobs:
   arguments:
     name: Testing the operation of the program with arguments
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tests
     steps:
     - uses: actions/checkout@v3
     - name: Missing input file
       run: |
-        cd tests
         chmod +x IF_missing.sh
         ./IF_missing.sh
     - name: Input file doesn't exist
       run: |
-        cd tests
         chmod +x IF_doesnt_exist.sh
         ./IF_doesnt_exist.sh
     - name: Missing output file
       run: |
-        cd tests
         chmod +x OF_missing.sh
         ./OF_missing.sh
     - name: Writing to output file
       run: |
-        cd tests
         chmod +x OF_writing.sh
         ./OF_writing.sh
     - name: Overwriting to output file
       run: |
-        cd tests
         chmod +x OF_overwriting.sh
         ./OF_overwriting.sh
   functionality:
     name: Testing the functionality of the program
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tests
     steps:
     - uses: actions/checkout@v3
     - name: Add execution permissions to functionality script
       run: chmod +x tests/functionality.sh
     - name: Increment operator test
-      run: |
-        cd tests
-        ./functionality.sh inc
+      run: ./functionality.sh inc
     - name: Arithmetic expressions
-      run: |
-        cd tests
-        ./functionality.sh arith
+      run: ./functionality.sh arith
     - name: Arithmetic conditional expressions
-      run: |
-        cd tests
-        ./functionality.sh conds
+      run: ./functionality.sh conds
     - name: Named Function Arguments
-      run: |
-        cd tests
-        ./functionality.sh args
+      run: ./functionality.sh args
